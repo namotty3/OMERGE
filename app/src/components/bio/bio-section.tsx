@@ -44,7 +44,7 @@ export function BioSection() {
               data-reveal=""
               key={member.id}
             >
-              <div className="aspect-square w-full max-w-[240px] overflow-hidden rounded-full border border-om-line/40 bg-om-panel">
+              <div className="aspect-square w-full max-w-[240px] overflow-hidden border border-om-line/40 bg-om-panel">
                 <img
                   alt=""
                   className="h-full w-full object-cover"
