@@ -17,7 +17,7 @@ export function UpcomingLivesSection() {
     >
       <div className="mx-auto max-w-6xl">
         <h2 className="font-om-heading text-4xl text-om-ink md:text-5xl">
-          次なる開演
+          SCHEDULE
         </h2>
 
         <Reveal

@@ -89,27 +89,6 @@ export const socialLinks: SocialLink[] = [
     href: "https://x.com/omerge_official",
     icon: "x",
   },
-  {
-    id: "instagram",
-    label: "Instagram",
-    handle: "準備中",
-    href: null,
-    icon: "instagram",
-  },
-  {
-    id: "youtube",
-    label: "YouTube",
-    handle: "準備中",
-    href: null,
-    icon: "youtube",
-  },
-  {
-    id: "tiktok",
-    label: "TikTok",
-    handle: "準備中",
-    href: null,
-    icon: "tiktok",
-  },
 ];
 
 export interface PastLive {
@@ -119,6 +98,7 @@ export interface PastLive {
   venue: string;
   image: string;
   setlist: string[];
+  photos: string[];
 }
 
 export const pastLives: PastLive[] = [
@@ -135,6 +115,18 @@ export const pastLives: PastLive[] = [
       "I LOVE YOU / BODY",
       "ピンクスパイダー / hide with Spread Beaver",
     ],
+    photos: [
+      "/assets/live-gallery/extreme-1st-anniversary/01.jpg",
+      "/assets/live-gallery/extreme-1st-anniversary/02.jpg",
+      "/assets/live-gallery/extreme-1st-anniversary/03.jpg",
+      "/assets/live-gallery/extreme-1st-anniversary/04.jpg",
+      "/assets/live-gallery/extreme-1st-anniversary/05.jpg",
+      "/assets/live-gallery/extreme-1st-anniversary/06.jpg",
+      "/assets/live-gallery/extreme-1st-anniversary/07.jpg",
+      "/assets/live-gallery/extreme-1st-anniversary/08.jpg",
+      "/assets/live-gallery/extreme-1st-anniversary/09.jpg",
+      "/assets/live-gallery/extreme-1st-anniversary/10.jpg",
+    ],
   },
   {
     id: "rockbar-extreme-half",
@@ -148,6 +140,14 @@ export const pastLives: PastLive[] = [
       "ENDLESS LOVE / D-SHADE",
       "不滅花 / Raphael",
       "Melty Love / SHAZNA",
+    ],
+    photos: [
+      "/assets/live-gallery/rockbar-extreme-half/01.jpg",
+      "/assets/live-gallery/rockbar-extreme-half/02.jpg",
+      "/assets/live-gallery/rockbar-extreme-half/03.jpg",
+      "/assets/live-gallery/rockbar-extreme-half/04.jpg",
+      "/assets/live-gallery/rockbar-extreme-half/05.jpg",
+      "/assets/live-gallery/rockbar-extreme-half/06.jpg",
     ],
   },
 ];
@@ -177,27 +177,5 @@ export const upcomingLives: UpcomingLive[] = [
     ticketDoor: "¥3,500+1D",
     detailHref: "https://x.com/club_gessekai",
     bandTime: "O'MERGE出演 17:30〜(30分)",
-  },
-  {
-    id: "genyasai",
-    title: "対バン企画『幻夜祭』",
-    date: "2026.10.18",
-    venue: "高円寺CLUB SQUARE",
-    openTime: "17:30",
-    startTime: "18:00",
-    ticketAdvance: "¥3,500",
-    ticketDoor: "¥4,000",
-    detailHref: "https://x.com/omerge_official",
-  },
-  {
-    id: "barairo",
-    title: "ワンマンライブ『薔薇色の夜想曲』",
-    date: "2026.12.20",
-    venue: "池袋EDGE",
-    openTime: "17:00",
-    startTime: "17:30",
-    ticketAdvance: "¥4,000",
-    ticketDoor: "¥4,500",
-    detailHref: "https://x.com/omerge_official",
   },
 ];

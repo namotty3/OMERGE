@@ -1,3 +1,5 @@
+import { Link } from "@tanstack/react-router";
+
 import { SetlistToggle } from "@/components/cta/setlist-toggle";
 import { Reveal } from "@/components/reveal/reveal";
 import { pastLives } from "@/data/site-data";
@@ -12,10 +14,10 @@ export function LiveHistorySection() {
     >
       <div className="mx-auto max-w-6xl">
         <h2 className="max-w-[16ch] font-om-heading text-4xl text-om-ink md:text-5xl">
-          夜の記録
+          ARCHIVE
         </h2>
         <p className="mt-4 max-w-[48ch] text-sm leading-relaxed text-om-muted">
-          幕が下りた夜も、物語は紙の上に残る。これまでの公演の記録。
+          これまでの公演の記録。
         </p>
 
         <Reveal className="mt-16 grid gap-16 sm:grid-cols-2" stagger={0.15}>
@@ -30,19 +32,28 @@ export function LiveHistorySection() {
               key={live.id}
             >
               <div className="border border-om-line/30 bg-om-bg p-3 shadow-[0_20px_40px_-20px_rgba(0,0,0,0.6)]">
-                <img
-                  alt=""
-                  className="aspect-[3/2] w-full object-cover"
-                  loading="lazy"
-                  src={live.image}
-                />
+                <Link
+                  aria-label={`${live.title} のアーカイブを見る`}
+                  className="block"
+                  params={{ id: live.id }}
+                  to="/archive/$id"
+                >
+                  <img
+                    alt=""
+                    className="aspect-[3/2] w-full object-cover transition-opacity hover:opacity-90"
+                    loading="lazy"
+                    src={live.image}
+                  />
+                </Link>
                 <div className="p-4">
                   <p className="font-om-en text-xs tracking-[0.2em] text-om-accent-bright">
                     {live.date} &middot; {live.venue}
                   </p>
-                  <h3 className="mt-2 font-om-heading text-xl text-om-ink">
-                    {live.title}
-                  </h3>
+                  <Link params={{ id: live.id }} to="/archive/$id">
+                    <h3 className="mt-2 font-om-heading text-xl text-om-ink transition-colors hover:text-om-accent-bright">
+                      {live.title}
+                    </h3>
+                  </Link>
                   <div className="mt-5">
                     <SetlistToggle setlist={live.setlist} />
                   </div>
