@@ -1,5 +1,5 @@
 import { SocialIcon } from "@/components/icons/social-icon";
-import { band, socialLinks } from "@/data/site-data";
+import { socialLinks } from "@/data/site-data";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -16,7 +16,6 @@ export function Footer() {
           />
           <div>
             <p className="font-om-display text-lg tracking-[0.3em] text-om-ink">O'MERGE</p>
-            <p className="mt-2 max-w-sm text-sm leading-relaxed">{band.tagline}</p>
           </div>
         </div>
 

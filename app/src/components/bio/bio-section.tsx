@@ -50,17 +50,30 @@ export function BioSection() {
                 <h3 className="mt-1.5 font-om-heading text-2xl text-om-ink">
                   {member.name}
                 </h3>
-                {member.sns ? (
-                  <a
-                    className="mt-3 inline-flex items-center gap-1.5 text-xs tracking-[0.15em] text-om-muted transition-colors hover:text-om-accent-bright"
-                    href={member.sns}
-                    rel="me noreferrer"
-                    target="_blank"
-                  >
-                    <SocialIcon className="h-3 w-3" icon="x" />
-                    {member.sns.replace("https://x.com/", "@")}
-                  </a>
-                ) : null}
+                <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
+                  {member.sns ? (
+                    <a
+                      className="inline-flex items-center gap-1.5 text-xs tracking-[0.15em] text-om-muted transition-colors hover:text-om-accent-bright"
+                      href={member.sns}
+                      rel="me noreferrer"
+                      target="_blank"
+                    >
+                      <SocialIcon className="h-3 w-3" icon="x" />
+                      {member.sns.replace("https://x.com/", "@")}
+                    </a>
+                  ) : null}
+                  {member.instagram ? (
+                    <a
+                      className="inline-flex items-center gap-1.5 text-xs tracking-[0.15em] text-om-muted transition-colors hover:text-om-accent-bright"
+                      href={member.instagram}
+                      rel="me noreferrer"
+                      target="_blank"
+                    >
+                      <SocialIcon className="h-3 w-3" icon="instagram" />
+                      {member.instagram.replace("https://www.instagram.com/", "@")}
+                    </a>
+                  ) : null}
+                </div>
               </div>
             </li>
           ))}

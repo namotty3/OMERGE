@@ -10,7 +10,6 @@
 export const band = {
   name: "O'MERGE",
   nameJa: "オマージュ",
-  tagline: "黄金期へ、鎮魂歌。",
 };
 
 export interface Member {
@@ -20,6 +19,7 @@ export interface Member {
   name: string;
   symbolImage: string;
   sns: string | null;
+  instagram: string | null;
 }
 
 export const members: Member[] = [
@@ -30,6 +30,7 @@ export const members: Member[] = [
     name: "しゅん",
     symbolImage: "/assets/members/shun.jpg",
     sns: "https://x.com/accounts_nana",
+    instagram: "https://www.instagram.com/shun_hengen_sm",
   },
   {
     id: "hamoran",
@@ -38,6 +39,7 @@ export const members: Member[] = [
     name: "HAMORAN",
     symbolImage: "/assets/members/hamoran.jpg",
     sns: "https://x.com/mockingbird340x",
+    instagram: "https://www.instagram.com/hiroki.mg340x",
   },
   {
     id: "nana",
@@ -46,6 +48,7 @@ export const members: Member[] = [
     name: "那々",
     symbolImage: "/assets/members/nana.jpg",
     sns: "https://x.com/nana_bassist",
+    instagram: "https://www.instagram.com/nam_crisis52",
   },
   {
     id: "sin",
@@ -54,6 +57,7 @@ export const members: Member[] = [
     name: "SiN",
     symbolImage: "/assets/members/sin.jpg",
     sns: null,
+    instagram: "https://www.instagram.com/stand_red_cyclone",
   },
 ];
 
