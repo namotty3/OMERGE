@@ -1,6 +1,6 @@
 import { Reveal } from "@/components/reveal/reveal";
 import { SocialIcon } from "@/components/icons/social-icon";
-import { band, members } from "@/data/site-data";
+import { members } from "@/data/site-data";
 
 /** Off-grid editorial band statement + an asymmetric 2x2 member grid, each
  * portrait cropped into a circular frame. The eyebrow here is the site's
@@ -17,23 +17,14 @@ export function BioSection() {
       />
 
       <div className="relative mx-auto max-w-6xl">
-        <div className="grid gap-10 md:grid-cols-12">
-          <div className="md:col-span-4">
-            <p className="flex items-center gap-2 font-om-en text-xs tracking-[0.35em] text-om-accent-bright">
-              <img alt="" aria-hidden="true" className="h-3.5 w-3.5 opacity-80" src="/assets/icons/rose.png" />
-              PROFILE
-            </p>
-            <h2 className="mt-4 font-om-heading text-4xl leading-[1.15] text-om-ink md:text-5xl">
-              闇に咲く、
-              <br />
-              四つの調べ。
-            </h2>
-          </div>
-          <div className="md:col-span-7 md:col-start-6 md:pt-14">
-            <p className="max-w-[46ch] text-base leading-loose text-om-muted">
-              {band.bio}
-            </p>
-          </div>
+        <div>
+          <p className="flex items-center gap-2 font-om-en text-xs tracking-[0.35em] text-om-accent-bright">
+            <img alt="" aria-hidden="true" className="h-3.5 w-3.5 opacity-80" src="/assets/icons/rose.png" />
+            PROFILE
+          </p>
+          <h2 className="mt-4 font-om-heading text-4xl leading-[1.15] text-om-ink md:text-5xl">
+            MEMBER
+          </h2>
         </div>
 
         <Reveal className="mt-20" stagger={0.12}>
@@ -59,12 +50,6 @@ export function BioSection() {
                 <h3 className="mt-1.5 font-om-heading text-2xl text-om-ink">
                   {member.name}
                 </h3>
-                <p className="mt-3 max-w-[32ch] text-sm leading-relaxed text-om-muted">
-                  {member.bio}
-                </p>
-                <p className="mt-3 font-om-en text-sm italic text-om-line">
-                  &ldquo;{member.quote}&rdquo;
-                </p>
                 {member.sns ? (
                   <a
                     className="mt-3 inline-flex items-center gap-1.5 text-xs tracking-[0.15em] text-om-muted transition-colors hover:text-om-accent-bright"

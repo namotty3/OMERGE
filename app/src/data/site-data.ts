@@ -11,7 +11,6 @@ export const band = {
   name: "O'MERGE",
   nameJa: "オマージュ",
   tagline: "闇に捧ぐ、様式美。",
-  bio: "2023年、都内のライブハウスで結成。90年代ヴィジュアル系黄金期への敬意(オマージュ)を胸に、当時の楽曲を現代のオーディエンスに届けることを使命とするコピーバンド。過剰なまでの様式美、退廃と耽美が同居するステージングで、あの時代の熱狂を再現する。衣装も演出も一切妥協せず、一夜限りの舞台としてすべてのライブに臨んでいる。",
 };
 
 export interface Member {
@@ -19,8 +18,6 @@ export interface Member {
   part: string;
   partJa: string;
   name: string;
-  bio: string;
-  quote: string;
   symbolImage: string;
   sns: string | null;
 }
@@ -31,8 +28,6 @@ export const members: Member[] = [
     part: "Vocal",
     partJa: "Vo.",
     name: "しゅん",
-    bio: "感情を刃のように操る歌声で、退廃と美を描き出すフロントマン。幼少期からクラシック音楽に親しみ、その素養をヴィジュアル系の様式美に昇華させる。",
-    quote: "闇の中でこそ、声は輝く。",
     symbolImage: "/assets/members/shun.jpg",
     sns: "https://x.com/accounts_nana",
   },
@@ -41,8 +36,6 @@ export const members: Member[] = [
     part: "Guitar",
     partJa: "Gt.",
     name: "HAMORAN",
-    bio: "轟音と静寂を自在に操るギタリスト。緻密なアレンジと即興的な崩しを両立させる指使いに定評があり、楽曲の物語性を弦の一音一音に宿す。",
-    quote: "弦の一音に、物語を込めて。",
     symbolImage: "/assets/members/hamoran.jpg",
     sns: "https://x.com/mockingbird340x",
   },
@@ -51,8 +44,6 @@ export const members: Member[] = [
     part: "Bass",
     partJa: "Ba.",
     name: "那々",
-    bio: "重心の低いグルーヴでバンドの土台を支えるベーシスト。ステージ上では多くを語らず、静かな存在感でその音の説得力を伝える。",
-    quote: "低音は、闇夜の鼓動。",
     symbolImage: "/assets/members/nana.jpg",
     sns: "https://x.com/nana_bassist",
   },
@@ -61,8 +52,6 @@ export const members: Member[] = [
     part: "Drums",
     partJa: "Dr.",
     name: "SiN",
-    bio: "手数の多いドラミングと圧倒的なビジュアルでステージを支配するドラマー。テクニカルな楽曲になるほど、その真価を発揮する。",
-    quote: "刻むリズムは、儀式のように。",
     symbolImage: "/assets/members/sin.jpg",
     sns: null,
   },
