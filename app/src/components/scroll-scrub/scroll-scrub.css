@@ -256,13 +256,7 @@
   }
 
   .scroll-scrub__copy::before {
-    inset: -3rem -2rem;
-    background: linear-gradient(
-      to top,
-      var(--ss-bg) 0%,
-      color-mix(in srgb, var(--ss-bg) 82%, transparent) 58%,
-      transparent 100%
-    );
+    content: none;
   }
 
   .scroll-scrub__title {

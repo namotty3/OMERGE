@@ -141,6 +141,10 @@ export const pastLives: PastLive[] = [
       "/assets/live-gallery/rockbar-extreme-half/04.jpg",
       "/assets/live-gallery/rockbar-extreme-half/05.jpg",
       "/assets/live-gallery/rockbar-extreme-half/06.jpg",
+      "/assets/live-gallery/rockbar-extreme-half/07.jpg",
+      "/assets/live-gallery/rockbar-extreme-half/08.jpg",
+      "/assets/live-gallery/rockbar-extreme-half/09.jpg",
+      "/assets/live-gallery/rockbar-extreme-half/10.jpg",
     ],
   },
 ];
