@@ -1,0 +1,272 @@
+/* Bespoke CTA garments — design-brief.md "CTA inventory". Each intent gets
+ * its own interaction identity; nothing here is a shared button utility. */
+
+/* 1. JourneyCTA — viewfinder brackets that close around the label. */
+.journey-cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.1rem 2.25rem;
+  border: none;
+  background: none;
+  color: var(--ss-ink, var(--color-om-ink));
+  cursor: pointer;
+  font-family: var(--font-om-en);
+  font-size: 0.95rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.journey-cta__corner {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid var(--ss-accent, var(--color-om-accent-bright));
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.journey-cta__corner--tl {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+  transform: translate(-6px, -6px);
+}
+.journey-cta__corner--tr {
+  top: 0;
+  right: 0;
+  border-bottom: none;
+  border-left: none;
+  transform: translate(6px, -6px);
+}
+.journey-cta__corner--bl {
+  bottom: 0;
+  left: 0;
+  border-top: none;
+  border-right: none;
+  transform: translate(-6px, 6px);
+}
+.journey-cta__corner--br {
+  bottom: 0;
+  right: 0;
+  border-top: none;
+  border-left: none;
+  transform: translate(6px, 6px);
+}
+
+.journey-cta:hover .journey-cta__corner,
+.journey-cta:focus-visible .journey-cta__corner {
+  transform: translate(0, 0);
+}
+
+.journey-cta__label {
+  position: relative;
+}
+
+/* 2. FollowXButton — a mono readout that decodes the handle on hover. */
+.follow-x {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.4rem;
+  border: 1px solid var(--color-om-line);
+  color: var(--color-om-ink);
+  text-decoration: none;
+  transition: border-color 0.3s ease;
+}
+
+.follow-x:hover,
+.follow-x:focus-visible {
+  border-color: var(--color-om-accent-bright);
+}
+
+.follow-x__icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+.follow-x__readout {
+  position: relative;
+  display: inline-grid;
+  font-family: "Cormorant Garamond", monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+
+.follow-x__readout span {
+  grid-area: 1 / 1;
+}
+
+.follow-x__label {
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
+.follow-x__handle {
+  clip-path: inset(0 100% 0 0);
+  white-space: nowrap;
+  opacity: 0;
+  transition:
+    clip-path 0.5s steps(12, end),
+    opacity 0s linear 0.5s;
+}
+
+.follow-x:hover .follow-x__label,
+.follow-x:focus-visible .follow-x__label {
+  opacity: 0;
+}
+
+.follow-x:hover .follow-x__handle,
+.follow-x:focus-visible .follow-x__handle {
+  clip-path: inset(0 0 0 0);
+  opacity: 1;
+  transition:
+    clip-path 0.5s steps(12, end),
+    opacity 0s linear;
+}
+
+/* 3. LiveDetailStamp — a wax-seal press. */
+.live-stamp {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.65rem 1.2rem 0.65rem 0.65rem;
+  border: 1px solid var(--color-om-accent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-om-accent) 12%, transparent);
+  color: var(--color-om-ink);
+  text-decoration: none;
+  font-family: var(--font-om-en);
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  transition:
+    transform 0.15s ease,
+    background 0.2s ease;
+}
+
+.live-stamp__seal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 999px;
+  background: var(--color-om-accent);
+}
+
+.live-stamp__seal img {
+  width: 1rem;
+  height: 1rem;
+  filter: brightness(0) invert(1);
+}
+
+.live-stamp:hover {
+  background: color-mix(in srgb, var(--color-om-accent) 22%, transparent);
+}
+
+.live-stamp:active {
+  transform: scale(0.94) skew(-2deg, 0.5deg);
+  background: color-mix(in srgb, var(--color-om-accent) 38%, transparent);
+}
+
+/* 4. SetlistToggle — a torn label that splits apart to reveal the setlist. */
+.setlist-toggle {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--color-om-muted);
+  font-family: var(--font-om-en);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+}
+
+.setlist-toggle__row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.setlist-toggle__half {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.setlist-toggle[data-open="true"] .setlist-toggle__half--left {
+  transform: translateX(-3px);
+}
+.setlist-toggle[data-open="true"] .setlist-toggle__half--right {
+  transform: translateX(3px);
+}
+
+.setlist-toggle__glyph {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+.setlist-toggle[data-open="true"] .setlist-toggle__glyph {
+  transform: rotate(45deg);
+}
+
+.setlist-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.setlist-panel[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+.setlist-panel > div {
+  overflow: hidden;
+}
+
+/* 5. NavLink — a moving hairline, not a pill. */
+.nav-link {
+  position: relative;
+  padding-bottom: 0.35rem;
+  color: var(--color-om-muted);
+  text-decoration: none;
+  font-family: var(--font-om-en);
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  transition: color 0.25s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  height: 1px;
+  background: var(--color-om-accent-bright);
+  transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link:hover,
+.nav-link:focus-visible,
+.nav-link[data-active="true"] {
+  color: var(--color-om-ink);
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after,
+.nav-link[data-active="true"]::after {
+  right: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journey-cta__corner,
+  .follow-x__handle,
+  .follow-x__label,
+  .live-stamp,
+  .setlist-toggle__half,
+  .setlist-toggle__glyph,
+  .setlist-panel,
+  .nav-link::after {
+    transition: none !important;
+  }
+}

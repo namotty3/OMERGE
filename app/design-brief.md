@@ -38,6 +38,14 @@
 3. **spotlight** / title: "光が跡を追う" / body: "埃の粒が舞台照明の帯を横切り、幕の奥に人影の気配が滲む。"
 4. **threshold**(closing chapter, actions: 「物語へ」CTA → #bio へジャンプ) / title: "物語の幕開け" / body: "今宵、O'MERGEの物語がここから始まる。"
 
+**実装注記(Phase 3で確定):** シップされたscroll-scrubエンジンは1シーン=1バンドの
+ローカル進捗をクリップの0〜100%全体にマッピングする仕様のため、single-shotで
+シーンを4分割すると各バンド境界でクリップが毎回frame 0へ巻き戻る(=カット/逆再
+生に見える)。footage contractの「no cuts」を守るため、`scrollScrubScenes`は
+**1エントリのみ**とし、上記4ビートは主見出し(overture)+本文+3つのtag断片
+(relic/spotlight/threshold の一文)として1つの連続スクラブ内に統合した。
+closing CTA(「物語へ」→ #bio)はそのシーンの`actions`としてindex.tsx側で注入。
+
 ### World grammar(全プロンプト共通で固定)
 Style preamble: "cinematic gothic theater interior, decayed velvet curtains, single dramatic spotlight, dust particles in the air, dark wine-black and blood-crimson palette (#0d0508 ground, #8a1538 accent), warm candlelight key light from camera-left, shallow depth of field, 35mm anamorphic film grain, painterly chiaroscuro, no text, no logos, no watermark, no people, no cuts, no camera shake, slow steady forward push only, locked exposure and white balance"
 Perspective: 低めのアイレベル、緞帳の隙間から舞台中央の椅子へ向かうゆっくりとした一直線のプッシュイン。
@@ -103,3 +111,5 @@ SNSセクションの背景に敷く黒薔薇マクロ写真の一枚流し(macr
 
 ## Anti-convergence ledger
 本チャット内での前回ビルドは存在しない(初回ビルド)。次回以降のビルドはこのパレット群・タイプペア・ヒーロー構成・CTAガーメント・角丸言語と異なるものを選ぶこと。角丸言語: **all-sharp**(直角基調、装飾要素以外に丸みを使わない、ゴシック建築的な直線性)。
+
+**例外(書面化):** LiveDetailStamp(蝋封印CTA)とそのseal意匠のみ円形(pill/circle)を許可する。実在の蝋封印(ワックスシール)は本質的に円形であり、モチーフの説得力を優先した唯一の意図的な例外。他の全要素(カード、フレーム、ボタン、画像クロップ)はall-sharpを厳守。

@@ -1,1 +1,8 @@
 node_modules
+
+# Phase 1/2 working material (raw generations, source video, fonts used only
+# to compose the OG cover). Large and reproducible from design-brief.md's
+# prompts; not needed to build or deploy the site.
+refs/
+scripts_*.py
+

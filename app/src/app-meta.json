@@ -1,8 +1,8 @@
 {
-  "og_title": null,
-  "og_description": null,
-  "og_image_url": null,
-  "favicon_url": null,
+  "og_title": "O'MERGE",
+  "og_description": "90年代ヴィジュアル系コピーバンド O'MERGE 公式サイト。闇に捧ぐ、様式美。",
+  "og_image_url": "/assets/brand/og-wide.jpg",
+  "favicon_url": "/assets/brand/favicon-32.png",
   "og_video_url": null,
-  "marketplace_cover_url": null
+  "marketplace_cover_url": "/assets/brand/cover.jpg"
 }

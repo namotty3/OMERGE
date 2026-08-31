@@ -8,11 +8,10 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
-import { button } from "@higgsfield/quanta/button";
-import { NotFound } from "@higgsfield/quanta/not-found";
 
 import appCss from "../styles.css?url";
 import { reportHiggsfieldError } from "../lib/higgsfield-error-reporting";
+import { BRAND_THEME_COLOR } from "../lib/brand";
 // Page metadata (browser <title>/favicon + social og: tags) committed into the
 // repo by the marketplace meta API and read at BUILD time — no runtime fetch.
 // Editing it via the app settings UI rewrites this file and redeploys the app.
@@ -21,8 +20,8 @@ import appMetaJson from "../app-meta.json";
 declare const __HF_DESIGN_INSPECTOR__: boolean;
 
 // Built-in defaults for any field that isn't set in app-meta.json.
-const DEFAULT_TITLE = "Higgsfield App";
-const DEFAULT_DESCRIPTION = "Higgsfield Generated Project";
+const DEFAULT_TITLE = "O'MERGE";
+const DEFAULT_DESCRIPTION = "90年代ヴィジュアル系コピーバンド O'MERGE 公式サイト";
 
 type AppMeta = {
   og_title?: string | null;
@@ -80,12 +79,13 @@ function buildHead(meta: AppMeta) {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title },
       { name: "description", content: description },
-      { name: "author", content: "Higgsfield" },
+      { name: "author", content: "O'MERGE" },
+      { name: "theme-color", content: BRAND_THEME_COLOR },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: ogImage ? "summary_large_image" : "summary" },
-      { name: "twitter:site", content: "@Higgsfield" },
+      { name: "twitter:site", content: "@omerge_official" },
       ...(ogImage
         ? [
             { property: "og:image", content: ogImage },
@@ -99,23 +99,43 @@ function buildHead(meta: AppMeta) {
     links: [
       { rel: "stylesheet", href: appCss },
       ...(favicon ? [{ rel: "icon", href: favicon }] : []),
+      { rel: "icon", href: "/assets/brand/favicon.ico", sizes: "any" },
+      { rel: "icon", type: "image/png", sizes: "32x32", href: "/assets/brand/favicon-32.png" },
+      { rel: "icon", type: "image/png", sizes: "16x16", href: "/assets/brand/favicon-16.png" },
+      { rel: "apple-touch-icon", href: "/assets/brand/apple-touch-icon.png" },
+      { rel: "manifest", href: "/site.webmanifest" },
+      // O'MERGE brand type (design-brief.md "Locked type").
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous" as const,
+      },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Shippori+Mincho+B1:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap",
+      },
     ],
   };
 }
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-dvh items-center justify-center bg-q-background-primary px-4">
-      <NotFound
-        className="mx-auto max-w-md"
-        icon={<span className="text-q-title-md-semi-bold text-q-text-primary">404</span>}
-        title="Page not found"
-        subtitle="The page you're looking for doesn't exist or has been moved."
+    <div className="flex min-h-dvh flex-col items-center justify-center gap-4 bg-om-bg px-4 text-center text-om-ink">
+      <img alt="" className="h-10 w-10 opacity-70" src="/assets/icons/cross.png" />
+      <span className="font-om-display text-sm tracking-[0.3em] text-om-accent-bright">
+        404
+      </span>
+      <h1 className="font-om-heading text-3xl">この幕は、まだ上がっていない</h1>
+      <p className="max-w-sm text-sm leading-relaxed text-om-muted">
+        お探しのページは見つかりませんでした。移動したか、削除された可能性があります。
+      </p>
+      <Link
+        to="/"
+        className="mt-2 border border-om-line px-6 py-3 font-om-en text-sm tracking-[0.15em] text-om-ink transition-colors hover:border-om-accent-bright hover:text-om-accent-bright"
       >
-        <Link to="/" className={button({ variant: "primary", size: "md" }, "mt-3")}>
-          Go home
-        </Link>
-      </NotFound>
+        舞台へ戻る
+      </Link>
     </div>
   );
 }
@@ -128,26 +148,28 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   }, [error]);
 
   return (
-    <div className="flex min-h-dvh items-center justify-center bg-q-background-primary px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-q-title-lg-semi-bold text-q-text-primary">This page didn't load</h1>
-        <p className="mt-2 text-q-body-sm-regular text-q-text-secondary">
-          Something went wrong on our end. You can try refreshing or head back home.
-        </p>
-        <div className="mt-4 flex flex-wrap justify-center gap-2">
-          <button
-            onClick={() => {
-              router.invalidate();
-              reset();
-            }}
-            className={button({ variant: "primary", size: "md" })}
-          >
-            Try again
-          </button>
-          <a href="/" className={button({ variant: "outline", size: "md" })}>
-            Go home
-          </a>
-        </div>
+    <div className="flex min-h-dvh flex-col items-center justify-center gap-4 bg-om-bg px-4 text-center text-om-ink">
+      <h1 className="font-om-heading text-2xl">このページは開けませんでした</h1>
+      <p className="max-w-sm text-sm leading-relaxed text-om-muted">
+        しばらくしてから、もう一度お試しください。
+      </p>
+      <div className="mt-2 flex flex-wrap justify-center gap-3">
+        <button
+          onClick={() => {
+            router.invalidate();
+            reset();
+          }}
+          className="border border-om-line px-6 py-3 font-om-en text-sm tracking-[0.15em] text-om-ink transition-colors hover:border-om-accent-bright hover:text-om-accent-bright"
+          type="button"
+        >
+          再読み込み
+        </button>
+        <a
+          href="/"
+          className="border border-transparent px-6 py-3 font-om-en text-sm tracking-[0.15em] text-om-muted underline decoration-om-line underline-offset-4 hover:text-om-ink"
+        >
+          舞台へ戻る
+        </a>
       </div>
     </div>
   );
@@ -164,14 +186,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" data-theme="default-dark" style={{ colorScheme: "dark" }}>
-      {/* Marketplace apps are permanently dark: data-theme is pinned on <html>
-          above. Do not add quanta's bootstrapScript/ThemeController, a theme
-          toggle, or a light mode. */}
+    <html lang="ja" data-om-site="" style={{ colorScheme: "dark" }}>
+      {/* O'MERGE is a standalone `type: "website"` brand: no Quanta theme
+          system, no theme toggle, permanently dark (the site's own gothic
+          palette lives in styles.css under [data-om-site]). */}
       <head>
         <HeadContent />
       </head>
-      <body className="bg-q-background-primary text-q-text-primary">
+      <body data-om-site="" className="bg-om-bg text-om-ink antialiased">
         {children}
         <Scripts />
       </body>

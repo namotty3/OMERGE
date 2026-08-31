@@ -24,6 +24,11 @@
 /* shadcn v4 base (scrollbar/scroll-fade utilities, toast base) for src/components/ui */
 @import "shadcn/tailwind.css";
 
+/* O'MERGE brand type (design-brief.md "Locked type") loads via a real <link
+ * rel="stylesheet"> in __root.tsx's head instead of a CSS @import — Tailwind's
+ * cascade-layer bundling reorders plain CSS @imports after other rules in
+ * the final build, which silently drops them. */
+
 @custom-variant dark (&:where([data-theme="default-dark"], [data-theme="default-dark"] *));
 
 /*
@@ -181,4 +186,42 @@
   * {
     border-color: var(--hf-color-border-default);
   }
+}
+
+/* =========================================================================
+ * O'MERGE — standalone brand layer (design-brief.md).
+ * This site is a `type: "website"` build: everything below is the site's
+ * OWN token system, independent of the Quanta app shell above. No q-*
+ * utilities or Higgsfield branding are used anywhere past this point.
+ * ========================================================================= */
+@theme {
+  --color-om-bg: #0d0508;
+  --color-om-panel: #1c0a10;
+  --color-om-accent: #8a1538;
+  --color-om-accent-bright: #b23052;
+  --color-om-ink: #f2e9e4;
+  --color-om-muted: #a68a90;
+  --color-om-line: #8f8a82;
+
+  --font-om-display: "Cinzel Decorative", "Shippori Mincho B1", serif;
+  --font-om-en: "Cormorant Garamond", "Cinzel Decorative", serif;
+  --font-om-heading: "Shippori Mincho B1", "Cinzel Decorative", serif;
+  --font-om-body: "Zen Kaku Gothic New", "Hiragino Sans", sans-serif;
+}
+
+html[data-om-site] {
+  background-color: var(--color-om-bg);
+  color: var(--color-om-ink);
+  color-scheme: dark;
+}
+
+body[data-om-site] {
+  background-color: var(--color-om-bg);
+  color: var(--color-om-ink);
+  font-family: var(--font-om-body);
+}
+
+[data-om-site] ::selection {
+  background: var(--color-om-accent);
+  color: var(--color-om-ink);
 }

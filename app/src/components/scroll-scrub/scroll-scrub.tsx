@@ -633,7 +633,13 @@ export function ScrollScrub({
           <span />
         </div>
 
-        <nav aria-label="Scroll chapters" className="scroll-scrub__route">
+        {/* A chapter-jump nav is only meaningful with more than one scene;
+            the site's own <Nav /> is the real navigation otherwise. */}
+        <nav
+          aria-label="Scroll chapters"
+          className="scroll-scrub__route"
+          hidden={scenes.length <= 1}
+        >
           {scenes.map((scene, index) => (
             <button
               aria-current={activeSection === index ? "step" : undefined}
