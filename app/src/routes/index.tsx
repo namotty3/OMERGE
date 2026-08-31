@@ -63,9 +63,9 @@ function Index() {
       <SectionDivider icon="thorn" label="薔薇と棘" />
       <SnsSection />
       <SectionDivider icon="candle" label="灯火" />
-      <LiveHistorySection />
-      <SectionDivider icon="mask" label="仮面" />
       <UpcomingLivesSection />
+      <SectionDivider icon="mask" label="仮面" />
+      <LiveHistorySection />
       <Footer />
     </main>
   );

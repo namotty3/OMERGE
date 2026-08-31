@@ -5,8 +5,8 @@ import "../cta/cta.css";
 const SECTIONS = [
   { href: "#bio", label: "BIO" },
   { href: "#sns", label: "SNS" },
-  { href: "#archive", label: "ARCHIVE" },
   { href: "#schedule", label: "SCHEDULE" },
+  { href: "#archive", label: "ARCHIVE" },
 ];
 
 export function Nav() {
