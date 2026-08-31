@@ -1,4 +1,5 @@
 import { Reveal } from "@/components/reveal/reveal";
+import { SocialIcon } from "@/components/icons/social-icon";
 import { band, members } from "@/data/site-data";
 
 const ARCH_CLIP = "polygon(0% 100%, 0% 32%, 50% 0%, 100% 32%, 100% 100%)";
@@ -69,6 +70,17 @@ export function BioSection() {
                 <p className="mt-3 font-om-en text-sm italic text-om-line">
                   &ldquo;{member.quote}&rdquo;
                 </p>
+                {member.sns ? (
+                  <a
+                    className="mt-3 inline-flex items-center gap-1.5 text-xs tracking-[0.15em] text-om-muted transition-colors hover:text-om-accent-bright"
+                    href={member.sns}
+                    rel="me noreferrer"
+                    target="_blank"
+                  >
+                    <SocialIcon className="h-3 w-3" icon="x" />
+                    {member.sns.replace("https://x.com/", "@")}
+                  </a>
+                ) : null}
               </div>
             </li>
           ))}

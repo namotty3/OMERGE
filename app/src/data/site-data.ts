@@ -22,6 +22,7 @@ export interface Member {
   bio: string;
   quote: string;
   symbolImage: string;
+  sns: string | null;
 }
 
 export const members: Member[] = [
@@ -33,6 +34,7 @@ export const members: Member[] = [
     bio: "感情を刃のように操る歌声で、退廃と美を描き出すフロントマン。幼少期からクラシック音楽に親しみ、その素養をヴィジュアル系の様式美に昇華させる。",
     quote: "闇の中でこそ、声は輝く。",
     symbolImage: "/assets/members/shun.jpg",
+    sns: "https://x.com/accounts_nana",
   },
   {
     id: "hamoran",
@@ -42,6 +44,7 @@ export const members: Member[] = [
     bio: "轟音と静寂を自在に操るギタリスト。緻密なアレンジと即興的な崩しを両立させる指使いに定評があり、楽曲の物語性を弦の一音一音に宿す。",
     quote: "弦の一音に、物語を込めて。",
     symbolImage: "/assets/members/hamoran.jpg",
+    sns: "https://x.com/mockingbird340x",
   },
   {
     id: "nana",
@@ -51,6 +54,7 @@ export const members: Member[] = [
     bio: "重心の低いグルーヴでバンドの土台を支えるベーシスト。ステージ上では多くを語らず、静かな存在感でその音の説得力を伝える。",
     quote: "低音は、闇夜の鼓動。",
     symbolImage: "/assets/members/nana.jpg",
+    sns: "https://x.com/nana_bassist",
   },
   {
     id: "sin",
@@ -60,6 +64,7 @@ export const members: Member[] = [
     bio: "手数の多いドラミングと圧倒的なビジュアルでステージを支配するドラマー。テクニカルな楽曲になるほど、その真価を発揮する。",
     quote: "刻むリズムは、儀式のように。",
     symbolImage: "/assets/members/sin.jpg",
+    sns: null,
   },
 ];
 

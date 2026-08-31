@@ -15,12 +15,11 @@ export function Nav() {
   return (
     <header className="fixed inset-x-0 top-0 z-40 flex h-16 items-center justify-between gap-4 bg-gradient-to-b from-om-bg/85 via-om-bg/40 to-transparent px-4 md:h-20 md:px-8">
       <a
-        className="flex items-center gap-2.5 text-om-ink"
+        className="flex items-center text-om-ink"
         href="#top"
         aria-label="O'MERGE トップへ"
       >
-        <img alt="" className="h-7 w-7 md:h-8 md:w-8" src="/assets/brand/monogram.png" />
-        <span className="font-om-display text-sm tracking-[0.28em] md:text-base">O'MERGE</span>
+        <img alt="O'MERGE" className="h-6 w-auto md:h-7" src="/assets/brand/logo-wordmark.png" />
       </a>
 
       <nav
