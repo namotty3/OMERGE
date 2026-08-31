@@ -2,11 +2,9 @@ import { Reveal } from "@/components/reveal/reveal";
 import { SocialIcon } from "@/components/icons/social-icon";
 import { band, members } from "@/data/site-data";
 
-const ARCH_CLIP = "polygon(0% 100%, 0% 32%, 50% 0%, 100% 32%, 100% 100%)";
-
 /** Off-grid editorial band statement + an asymmetric 2x2 member grid, each
- * portrait cropped into an angular gothic-arch frame (design-brief.md
- * "layered image crop frames"). The eyebrow here is the site's 2nd of 2. */
+ * portrait cropped into a circular frame. The eyebrow here is the site's
+ * 2nd of 2. */
 export function BioSection() {
   return (
     <section
@@ -46,10 +44,7 @@ export function BioSection() {
               data-reveal=""
               key={member.id}
             >
-              <div
-                className="aspect-[4/5] w-full max-w-[280px] overflow-hidden bg-om-panel"
-                style={{ clipPath: ARCH_CLIP }}
-              >
+              <div className="aspect-square w-full max-w-[240px] overflow-hidden rounded-full border border-om-line/40 bg-om-panel">
                 <img
                   alt=""
                   className="h-full w-full object-cover"

@@ -163,9 +163,22 @@ export interface UpcomingLive {
   ticketAdvance: string;
   ticketDoor: string;
   detailHref: string;
+  bandTime?: string;
 }
 
 export const upcomingLives: UpcomingLive[] = [
+  {
+    id: "bar-shield-10th",
+    title: "Bar SHIELD 10周年記念LIVE",
+    date: "2026.09.27",
+    venue: "神戸クラブ月世界",
+    openTime: "12:00",
+    startTime: "12:30",
+    ticketAdvance: "¥3,500+1D",
+    ticketDoor: "¥3,500+1D",
+    detailHref: "https://x.com/club_gessekai",
+    bandTime: "O'MERGE出演 17:30〜(30分)",
+  },
   {
     id: "genyasai",
     title: "対バン企画『幻夜祭』",
