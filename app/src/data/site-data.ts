@@ -10,7 +10,7 @@
 export const band = {
   name: "O'MERGE",
   nameJa: "オマージュ",
-  tagline: "闇に捧ぐ、様式美。",
+  tagline: "黄金期へ、鎮魂歌。",
 };
 
 export interface Member {
