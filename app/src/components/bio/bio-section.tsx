@@ -35,10 +35,10 @@ export function BioSection() {
               data-reveal=""
               key={member.id}
             >
-              <div className="aspect-square w-full max-w-[240px] overflow-hidden border border-om-line/40 bg-om-panel">
+              <div className="aspect-square w-full max-w-[240px] overflow-hidden bg-om-bg">
                 <img
                   alt=""
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover [-webkit-mask-image:radial-gradient(ellipse_at_center,black_58%,transparent_98%)] [mask-image:radial-gradient(ellipse_at_center,black_58%,transparent_98%)]"
                   loading="lazy"
                   src={member.symbolImage}
                 />

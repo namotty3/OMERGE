@@ -31,7 +31,6 @@ export const scrollScrubScenes: ScrollScrubScene[] = [
     kicker: "OVERTURE",
     title: "90's、蘇演。",
     body: "90年代ヴィジュアル系黄金期への敬意(オマージュ)を胸に、当時の楽曲を現代のオーディエンスに届けることを使命とするコピーバンド。",
-    tags: ["薔薇は棘とともに眠る", "光が跡を追う", "物語の幕開け"],
     clip: "/assets/world/journey.mp4",
     mobileClip: "/assets/world/journey-mobile.mp4",
     poster: "/assets/world/journey-poster.png",

@@ -18,6 +18,8 @@ export function LiveHistorySection() {
         </h2>
         <p className="mt-4 max-w-[48ch] text-sm leading-relaxed text-om-muted">
           これまでの公演の記録。
+          <br />
+          各ライブ情報をタップでライブの写真集が表示されます。
         </p>
 
         <Reveal className="mt-16 grid gap-16 sm:grid-cols-2" stagger={0.15}>
