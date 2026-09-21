@@ -53,20 +53,25 @@ export function UpcomingLivesSection() {
                     <img alt="" aria-hidden="true" className="h-3.5 w-3.5 opacity-70" src="/assets/icons/key.png" />
                     前売 {live.ticketAdvance} / 当日 {live.ticketDoor}
                   </p>
-                  {live.flyer ? (
-                    <a
-                      className="mt-6 block max-w-[280px] border border-om-line/30 bg-om-panel p-2"
-                      href={live.flyer}
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      <img
-                        alt={`${live.title} フライヤー`}
-                        className="h-auto w-full"
-                        loading="lazy"
-                        src={live.flyer}
-                      />
-                    </a>
+                  {live.flyers?.length ? (
+                    <div className="mt-6 grid max-w-[520px] grid-cols-2 gap-3">
+                      {live.flyers.map((src, n) => (
+                        <a
+                          className="block border border-om-line/30 bg-om-panel p-1.5"
+                          href={src}
+                          key={src}
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          <img
+                            alt={`${live.title} フライヤー ${n + 1}`}
+                            className="h-auto w-full"
+                            loading="lazy"
+                            src={src}
+                          />
+                        </a>
+                      ))}
+                    </div>
                   ) : null}
                 </div>
 

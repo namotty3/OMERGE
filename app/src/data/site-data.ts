@@ -160,8 +160,8 @@ export interface UpcomingLive {
   ticketDoor: string;
   detailHref: string;
   bandTime?: string;
-  /** Flyer image path under /public (optional). */
-  flyer?: string;
+  /** Flyer image paths under /public/assets/flyers/<yyyymmdd>/ (optional). */
+  flyers?: string[];
 }
 
 export const upcomingLives: UpcomingLive[] = [
@@ -176,5 +176,9 @@ export const upcomingLives: UpcomingLive[] = [
     ticketDoor: "¥3,500+1D",
     detailHref: "https://x.com/club_gessekai",
     bandTime: "O'MERGE出演 17:30〜(30分)",
+    flyers: [
+      "/assets/flyers/20260927/01.jpg",
+      "/assets/flyers/20260927/02.jpg",
+    ],
   },
 ];
