@@ -153,12 +153,14 @@ export interface UpcomingLive {
   id: string;
   title: string;
   date: string;
-  venue: string;
-  openTime: string;
-  startTime: string;
-  ticketAdvance: string;
-  ticketDoor: string;
-  detailHref: string;
+  /** Details are optional so a date can be announced before anything else is
+   * decided (rendered as a bare "COMING SOON" row). */
+  venue?: string;
+  openTime?: string;
+  startTime?: string;
+  ticketAdvance?: string;
+  ticketDoor?: string;
+  detailHref?: string;
   bandTime?: string;
   /** Flyer image paths under /public/assets/flyers/<yyyymmdd>/ (optional). */
   flyers?: string[];
@@ -180,5 +182,10 @@ export const upcomingLives: UpcomingLive[] = [
       "/assets/flyers/20260927/01.jpg",
       "/assets/flyers/20260927/02.jpg",
     ],
+  },
+  {
+    id: "20261108",
+    title: "COMING SOON",
+    date: "2026.11.08",
   },
 ];

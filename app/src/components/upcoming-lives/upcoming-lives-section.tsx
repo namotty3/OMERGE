@@ -43,16 +43,26 @@ export function UpcomingLivesSection() {
                   <h3 className="font-om-heading text-xl text-om-ink md:text-2xl">
                     {live.title}
                   </h3>
-                  <p className="mt-2 text-sm text-om-muted">
-                    {live.venue} &nbsp;|&nbsp; 開場 {live.openTime} / 開演 {live.startTime}
-                  </p>
+                  {live.venue ? (
+                    <p className="mt-2 text-sm text-om-muted">
+                      {live.venue}
+                      {live.openTime && live.startTime ? (
+                        <>
+                          {" "}
+                          &nbsp;|&nbsp; 開場 {live.openTime} / 開演 {live.startTime}
+                        </>
+                      ) : null}
+                    </p>
+                  ) : null}
                   {live.bandTime ? (
                     <p className="mt-1 text-sm text-om-accent-bright">{live.bandTime}</p>
                   ) : null}
-                  <p className="mt-1 flex items-center gap-1.5 font-om-en text-xs tracking-[0.08em] text-om-line">
-                    <img alt="" aria-hidden="true" className="h-3.5 w-3.5 opacity-70" src="/assets/icons/key.png" />
-                    前売 {live.ticketAdvance} / 当日 {live.ticketDoor}
-                  </p>
+                  {live.ticketAdvance && live.ticketDoor ? (
+                    <p className="mt-1 flex items-center gap-1.5 font-om-en text-xs tracking-[0.08em] text-om-line">
+                      <img alt="" aria-hidden="true" className="h-3.5 w-3.5 opacity-70" src="/assets/icons/key.png" />
+                      前売 {live.ticketAdvance} / 当日 {live.ticketDoor}
+                    </p>
+                  ) : null}
                   {live.flyers?.length ? (
                     <div className="mt-6 grid max-w-[520px] grid-cols-2 gap-3">
                       {live.flyers.map((src, n) => (
@@ -75,9 +85,11 @@ export function UpcomingLivesSection() {
                   ) : null}
                 </div>
 
-                <div className="col-span-2 md:col-span-1 md:justify-self-end">
-                  <LiveDetailStamp href={live.detailHref} />
-                </div>
+                {live.detailHref ? (
+                  <div className="col-span-2 md:col-span-1 md:justify-self-end">
+                    <LiveDetailStamp href={live.detailHref} />
+                  </div>
+                ) : null}
               </div>
             );
           })}
