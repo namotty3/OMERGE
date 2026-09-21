@@ -2,6 +2,8 @@ import { LiveDetailStamp } from "@/components/cta/live-detail-stamp";
 import { Reveal } from "@/components/reveal/reveal";
 import { upcomingLives } from "@/data/site-data";
 
+import { FlyerGallery } from "./flyer-gallery";
+
 /** Structured divide-y rows; the date is shown plainly as yyyy.mm.dd. */
 export function UpcomingLivesSection() {
   return (
@@ -54,24 +56,7 @@ export function UpcomingLivesSection() {
                     </p>
                   ) : null}
                   {live.flyers?.length ? (
-                    <div className="mt-6 grid max-w-[520px] grid-cols-2 gap-3">
-                      {live.flyers.map((src, n) => (
-                        <a
-                          className="block border border-om-line/30 bg-om-panel p-1.5"
-                          href={src}
-                          key={src}
-                          rel="noreferrer"
-                          target="_blank"
-                        >
-                          <img
-                            alt={`${live.title} フライヤー ${n + 1}`}
-                            className="h-auto w-full"
-                            loading="lazy"
-                            src={src}
-                          />
-                        </a>
-                      ))}
-                    </div>
+                    <FlyerGallery images={live.flyers} title={live.title} />
                   ) : null}
                 </div>
 
