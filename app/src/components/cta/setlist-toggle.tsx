@@ -2,8 +2,7 @@ import { useId, useState } from "react";
 
 import "./cta.css";
 
-/** Past-live card CTA: the label splits apart like torn paper to reveal the
- * full setlist beneath it, instead of a plain accordion chevron. */
+/** Past-live card CTA: a text toggle that reveals the full setlist beneath it. */
 export function SetlistToggle({ setlist }: { setlist: string[] }) {
   const [open, setOpen] = useState(false);
   const panelId = useId();
@@ -20,15 +19,7 @@ export function SetlistToggle({ setlist }: { setlist: string[] }) {
       >
         <span className="setlist-toggle__row">
           <span className="setlist-toggle__half setlist-toggle__half--left">
-            {open ? "閉じる" : "セットリストを"}
-          </span>
-          {!open && (
-            <span aria-hidden="true" className="setlist-toggle__glyph">
-              +
-            </span>
-          )}
-          <span className="setlist-toggle__half setlist-toggle__half--right">
-            {open ? "" : "見る"}
+            {open ? "閉じる" : "セットリストを見る"}
           </span>
         </span>
       </button>

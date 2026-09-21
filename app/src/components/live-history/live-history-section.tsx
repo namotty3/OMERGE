@@ -56,7 +56,15 @@ export function LiveHistorySection() {
                       {live.title}
                     </h3>
                   </Link>
-                  <div className="mt-5">
+                  <div className="mt-5 flex flex-col items-start gap-4">
+                    <Link
+                      className="inline-flex items-center gap-2 border border-om-accent-bright px-5 py-2.5 font-om-en text-xs tracking-[0.2em] text-om-ink transition-colors hover:bg-om-accent hover:text-om-ink"
+                      params={{ id: live.id }}
+                      to="/archive/$id"
+                    >
+                      アルバムを見る
+                      <span aria-hidden="true">&rarr;</span>
+                    </Link>
                     <SetlistToggle setlist={live.setlist} />
                   </div>
                 </div>

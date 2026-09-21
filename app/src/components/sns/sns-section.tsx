@@ -29,11 +29,7 @@ export function SnsSection() {
         <h2 className="font-om-heading text-4xl text-om-ink md:text-5xl" data-reveal="">
           SNS
         </h2>
-        <p className="max-w-[42ch] text-sm leading-relaxed text-om-muted" data-reveal="">
-          まずはXをフォローして、次の幕を見届けてほしい。
-        </p>
-
-        <div className="mt-4 flex flex-wrap items-center justify-center gap-4" data-reveal="">
+        <div className="flex flex-wrap items-center justify-center gap-4" data-reveal="">
           {x?.href ? <FollowXButton handle={x.handle} href={x.href} /> : null}
         </div>
       </Reveal>

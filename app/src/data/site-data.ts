@@ -160,6 +160,8 @@ export interface UpcomingLive {
   ticketDoor: string;
   detailHref: string;
   bandTime?: string;
+  /** Flyer image path under /public (optional). */
+  flyer?: string;
 }
 
 export const upcomingLives: UpcomingLive[] = [

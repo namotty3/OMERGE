@@ -193,22 +193,6 @@
 
 .setlist-toggle__half {
   display: inline-block;
-  transition: transform 0.3s ease;
-}
-
-.setlist-toggle[data-open="true"] .setlist-toggle__half--left {
-  transform: translateX(-3px);
-}
-.setlist-toggle[data-open="true"] .setlist-toggle__half--right {
-  transform: translateX(3px);
-}
-
-.setlist-toggle__glyph {
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
-.setlist-toggle[data-open="true"] .setlist-toggle__glyph {
-  transform: rotate(45deg);
 }
 
 .setlist-panel {
@@ -263,8 +247,6 @@
   .follow-x__handle,
   .follow-x__label,
   .live-stamp,
-  .setlist-toggle__half,
-  .setlist-toggle__glyph,
   .setlist-panel,
   .nav-link::after {
     transition: none !important;
