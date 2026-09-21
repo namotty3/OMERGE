@@ -2,13 +2,7 @@ import { LiveDetailStamp } from "@/components/cta/live-detail-stamp";
 import { Reveal } from "@/components/reveal/reveal";
 import { upcomingLives } from "@/data/site-data";
 
-function splitDate(date: string) {
-  const [year, month, day] = date.split(".");
-  return { year, month, day };
-}
-
-/** Swiss grid discipline: structured divide-y rows, a decorative date
- * numeral doing the hierarchy work instead of a card. */
+/** Structured divide-y rows; the date is shown plainly as yyyy.mm.dd. */
 export function UpcomingLivesSection() {
   return (
     <section
@@ -25,21 +19,17 @@ export function UpcomingLivesSection() {
           stagger={0.1}
         >
           {upcomingLives.map((live) => {
-            const { year, month, day } = splitDate(live.date);
             return (
               <div
-                className="grid grid-cols-[auto_1fr] items-center gap-6 py-8 md:grid-cols-[7rem_1fr_auto] md:gap-10"
+                className="grid grid-cols-1 items-start gap-4 py-8 md:grid-cols-[11rem_1fr_auto] md:gap-10"
                 data-reveal=""
                 key={live.id}
               >
-                <div className="font-om-display leading-none text-om-accent-bright">
-                  <span className="block text-4xl md:text-5xl">{day}</span>
-                  <span className="block font-om-en text-xs tracking-[0.2em] text-om-line">
-                    {year}.{month}
-                  </span>
-                </div>
+                <p className="font-om-display text-2xl leading-none text-om-accent-bright md:pt-1 md:text-3xl">
+                  {live.date}
+                </p>
 
-                <div className="col-span-2 md:col-span-1">
+                <div>
                   <h3 className="font-om-heading text-xl text-om-ink md:text-2xl">
                     {live.title}
                   </h3>
@@ -86,7 +76,7 @@ export function UpcomingLivesSection() {
                 </div>
 
                 {live.detailHref ? (
-                  <div className="col-span-2 md:col-span-1 md:justify-self-end">
+                  <div className="md:justify-self-end">
                     <LiveDetailStamp href={live.detailHref} />
                   </div>
                 ) : null}
