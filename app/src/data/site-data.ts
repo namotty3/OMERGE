@@ -184,8 +184,19 @@ export const upcomingLives: UpcomingLive[] = [
     ],
   },
   {
-    id: "20261108",
-    title: "COMING SOON",
+    id: "mix-tape-festival",
+    title: "THE MIX-TAPE FESTIVAL",
     date: "2026.11.08",
+    venue: "PANHEAD GROOVE",
+    openTime: "17:00",
+    startTime: "17:30",
+    ticketAdvance: "¥3,000+1D",
+    ticketDoor: "¥3,500+1D",
+    detailHref: "https://x.com/omerge_official",
+    bandTime: "O'MERGE出演 20:50〜21:20",
+    flyers: [
+      "/assets/flyers/20261108/01.jpg",
+      "/assets/flyers/20261108/02.jpg",
+    ],
   },
 ];
