@@ -177,7 +177,7 @@ export const upcomingLives: UpcomingLive[] = [
     ticketAdvance: "¥3,500+1D",
     ticketDoor: "¥3,500+1D",
     detailHref: "https://x.com/club_gessekai",
-    bandTime: "O'MERGE出演 17:30〜(30分)",
+    bandTime: "O'MERGE出演 17:30〜18:00 (おまけで17:20-やるかも！)",
     flyers: [
       "/assets/flyers/20260927/01.jpg",
       "/assets/flyers/20260927/02.jpg",
