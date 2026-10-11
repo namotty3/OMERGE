@@ -3,6 +3,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Nav } from "@/components/nav/nav";
 import { Footer } from "@/components/footer/footer";
 import { Reveal } from "@/components/reveal/reveal";
+import { ImageLightbox, useLightbox } from "@/components/lightbox/image-lightbox";
 import { pastLives } from "@/data/site-data";
 
 export const Route = createFileRoute("/archive/$id")({
@@ -22,6 +23,9 @@ export const Route = createFileRoute("/archive/$id")({
  * reached from a "夜の記録" card on the top page. */
 function ArchiveDetail() {
   const live = Route.useLoaderData();
+  const { close, open, openIndex, step, triggerRefs } = useLightbox(
+    live.photos.length,
+  );
 
   return (
     <main>
@@ -58,11 +62,17 @@ function ArchiveDetail() {
             className="mt-14 grid grid-cols-2 gap-3 sm:grid-cols-3 md:gap-4"
             stagger={0.05}
           >
-            {live.photos.map((src) => (
-              <div
-                className="aspect-[4/3] overflow-hidden border border-om-line/25 bg-om-panel"
+            {live.photos.map((src, n) => (
+              <button
+                aria-label={`${live.title} 写真 ${n + 1} を拡大表示`}
+                className="block aspect-[4/3] cursor-zoom-in overflow-hidden border border-om-line/25 bg-om-panel"
                 data-reveal=""
                 key={src}
+                onClick={() => open(n)}
+                ref={(el) => {
+                  triggerRefs.current[n] = el;
+                }}
+                type="button"
               >
                 <img
                   alt=""
@@ -70,12 +80,22 @@ function ArchiveDetail() {
                   loading="lazy"
                   src={src}
                 />
-              </div>
+              </button>
             ))}
           </Reveal>
         </div>
       </section>
       <Footer />
+
+      {openIndex !== null ? (
+        <ImageLightbox
+          images={live.photos}
+          label={`${live.title} 写真`}
+          onClose={close}
+          onStep={step}
+          openIndex={openIndex}
+        />
+      ) : null}
     </main>
   );
 }
