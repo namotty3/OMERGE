@@ -102,11 +102,11 @@ export const pastLives: PastLive[] = [
     venue: "心斎橋 PANHEAD GROOVE",
     image: "/assets/live/live-20261108.jpg",
     setlist: [
-      "Adolf / PIERROT",
-      "LIKE A ANGEL / 黒夢",
-      "Sadistic Desire / X",
       "Ask for Eyes / Sleep My Dear",
+      "Sadistic Desire / X",
+      "Adolf / PIERROT",
       "JEALOUS / Dir en grey",
+      "LIKE A ANGEL / 黒夢",
     ],
     photos: [
       "/assets/live-gallery/mix-tape-festival/01.jpg",
