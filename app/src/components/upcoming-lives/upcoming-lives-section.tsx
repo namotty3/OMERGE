@@ -68,6 +68,14 @@ export function UpcomingLivesSection() {
               </div>
             );
           })}
+          {upcomingLives.length === 0 ? (
+            <p
+              className="py-8 font-om-display text-2xl text-om-muted md:text-3xl"
+              data-reveal=""
+            >
+              COMING SOON
+            </p>
+          ) : null}
         </Reveal>
       </div>
     </section>

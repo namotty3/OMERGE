@@ -96,6 +96,52 @@ export interface PastLive {
 
 export const pastLives: PastLive[] = [
   {
+    id: "mix-tape-festival",
+    title: "THE MIX-TAPE FESTIVAL",
+    date: "2026.11.08",
+    venue: "心斎橋 PANHEAD GROOVE",
+    image: "/assets/live/live-20261108.jpg",
+    setlist: [
+      "Adolf / PIERROT",
+      "LIKE A ANGEL / 黒夢",
+      "Sadistic Desire / X",
+      "Ask for Eyes / Sleep My Dear",
+      "JEALOUS / Dir en grey",
+    ],
+    photos: [
+      "/assets/live-gallery/mix-tape-festival/01.jpg",
+      "/assets/live-gallery/mix-tape-festival/02.jpg",
+      "/assets/live-gallery/mix-tape-festival/03.jpg",
+      "/assets/live-gallery/mix-tape-festival/04.jpg",
+      "/assets/live-gallery/mix-tape-festival/05.jpg",
+      "/assets/live-gallery/mix-tape-festival/06.jpg",
+      "/assets/live-gallery/mix-tape-festival/07.jpg",
+      "/assets/live-gallery/mix-tape-festival/08.jpg",
+      "/assets/live-gallery/mix-tape-festival/09.jpg",
+      "/assets/live-gallery/mix-tape-festival/10.jpg",
+      "/assets/live-gallery/mix-tape-festival/11.jpg",
+      "/assets/live-gallery/mix-tape-festival/12.jpg",
+      "/assets/live-gallery/mix-tape-festival/13.jpg",
+      "/assets/live-gallery/mix-tape-festival/14.jpg",
+      "/assets/live-gallery/mix-tape-festival/15.jpg",
+      "/assets/live-gallery/mix-tape-festival/16.jpg",
+      "/assets/live-gallery/mix-tape-festival/17.jpg",
+      "/assets/live-gallery/mix-tape-festival/18.jpg",
+      "/assets/live-gallery/mix-tape-festival/19.jpg",
+      "/assets/live-gallery/mix-tape-festival/20.jpg",
+      "/assets/live-gallery/mix-tape-festival/21.jpg",
+      "/assets/live-gallery/mix-tape-festival/22.jpg",
+      "/assets/live-gallery/mix-tape-festival/23.jpg",
+      "/assets/live-gallery/mix-tape-festival/24.jpg",
+      "/assets/live-gallery/mix-tape-festival/25.jpg",
+      "/assets/live-gallery/mix-tape-festival/26.jpg",
+      "/assets/live-gallery/mix-tape-festival/27.jpg",
+      "/assets/live-gallery/mix-tape-festival/28.jpg",
+      "/assets/live-gallery/mix-tape-festival/29.jpg",
+      "/assets/live-gallery/mix-tape-festival/30.jpg",
+    ],
+  },
+  {
     id: "bar-shield-10th",
     title: "Bar SHIELD 10周年記念LIVE",
     date: "2026.09.27",
@@ -214,21 +260,4 @@ export interface UpcomingLive {
   flyers?: string[];
 }
 
-export const upcomingLives: UpcomingLive[] = [
-  {
-    id: "mix-tape-festival",
-    title: "THE MIX-TAPE FESTIVAL",
-    date: "2026.11.08",
-    venue: "PANHEAD GROOVE",
-    openTime: "17:00",
-    startTime: "17:30",
-    ticketAdvance: "¥3,000+1D",
-    ticketDoor: "¥3,500+1D",
-    detailHref: "https://x.com/omerge_official",
-    bandTime: "O'MERGE出演 20:50〜21:20",
-    flyers: [
-      "/assets/flyers/20261108/01.jpg",
-      "/assets/flyers/20261108/02.jpg",
-    ],
-  },
-];
+export const upcomingLives: UpcomingLive[] = [];
